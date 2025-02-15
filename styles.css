@@ -4,6 +4,16 @@ body {
     line-height: 1; /* لتوفير مسافة جيدة بين الأسطر */
 }
 
+a {
+    text-decoration: none; /* إزالة الخط السفلي */
+    color: inherit; /* جعل لون النص نفسه لون العنصر الأب */
+}
+
+a:visited, a:active, a:hover {
+    text-decoration: none; /* منع الخط السفلي في جميع الحالات */
+    color: inherit; /* إبقاء اللون كما هو دون تغيير */
+}
+
 .container {
     width: 100%;
     margin: 20px auto;
