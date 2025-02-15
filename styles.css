@@ -137,3 +137,22 @@ body {
 .dropdown::-webkit-scrollbar-thumb:hover {
     background: #ff7a26; /* لون أغمق عند التمرير */
 }
+.whatsapp-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.whatsapp-image {
+    width: 100%; /* الحجم الافتراضي على الكمبيوتر */
+    max-width: 1200px; /* أقصى حجم للصورة */
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* تصغير الصورة على الموبايل */
+@media (max-width: 768px) {
+    .whatsapp-image {
+        width: 100%; /* ربع حجمها الأصلي */
+        max-width: 300px; /* أقصى عرض على الموبايل */
+    }
+}
