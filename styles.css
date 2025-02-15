@@ -75,7 +75,7 @@ body {
 }
 
 /* تحسين التوافق مع الموبايل */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
