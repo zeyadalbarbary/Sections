@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أقسام الكتب</title>
+    <style>
+        .container {
+            width: 100%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 15px;
+        }
+        .div-rectangular {
+            width: 180px;
+            height: 90px;
+            background: #ff914d;
+            border: 4px solid #33348e;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .div-rectangular:hover {
+            transform: translateY(-5px);
+        }
+        .div-rectangular h6 {
+            font-size: 1.2em;
+            margin: 0;
+            color: #33348e;
+            font-weight: bold;
+            user-select: none;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            min-width: 160px;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 999;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #33348e;
+            font-weight: bold;
+        }
+        .dropdown a:hover {
+            background: #ffde59;
+        }
+        .div-rectangular:hover .dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://storebooks.shop/s/Products" class="div-rectangular">
+            <h6>المضاف حديثاً</h6>
+        </a>
+        <div class="div-rectangular">
+            <h6>أقسام الكتب</h6>
+            <div class="dropdown">
+                <a href="https://storebooks.shop/s/Products?type=روايات">روايات</a>
+                <a href="https://storebooks.shop/s/Products?type=عام">عام</a>
+                <a href="https://storebooks.shop/s/Products?type=ديني">ديني</a>
+                <a href="https://storebooks.shop/s/Products?type=إثارة">إثارة</a>
+                <a href="https://storebooks.shop/s/Products?type=خيال">خيال</a>
+                <a href="https://storebooks.shop/s/Products?type=إدارة أعمال">إدارة أعمال</a>
+                <a href="https://storebooks.shop/s/Products?type=المصاحف الشريفة">المصاحف الشريفة</a>
+            </div>
+        </div>
+        <div class="div-rectangular">
+            <h6>الكاتب</h6>
+            <div class="dropdown">
+                <a href="https://storebooks.shop/s/Products?type=عمرو عبدالحميد">عمرو عبد الحميد</a>
+                <a href="https://storebooks.shop/s/Products?type=أسامة المسلم">أسامة المسلم</a>
+                <a href="https://storebooks.shop/s/Products?type=حنان لاشين">حنان لاشين</a>
+                <a href="https://storebooks.shop/s/Products?type=أدهم الشرقاوي">أدهم الشرقاوي</a>
+            </div>
+        </div>
+        <div class="div-rectangular">
+            <h6>دار النشر</h6>
+            <div class="dropdown">
+                <a href="https://storebooks.shop/s/Products?type=عصير الكتب">عصير الكتب</a>
+                <a href="https://storebooks.shop/s/Products?type=دون">دون</a>
+                <a href="https://storebooks.shop/s/Products?type=الشروق">الشروق</a>
+            </div>
+        </div>
+        <a href="http://accessories.storebooks.shop" class="div-rectangular">
+            <h6>إكسسوارات وديكورات</h6>
+        </a>
+        <a href="http://stationery.storebooks.shop" class="div-rectangular">
+            <h6>أدوات مكتبية</h6>
+        </a>
+        <a href="https://storebooks.shop/s/p251786" class="div-rectangular">
+            <h6>طلبات الجملة</h6>
+        </a>
+        <a href="https://storebooks.shop" class="div-rectangular">
+            <h6>المدونة</h6>
+        </a>
+    </div>
+</body>
+</html>
