@@ -23,6 +23,7 @@
             flex-wrap: wrap;
             padding: 15px;
             position: relative;
+            overflow: visible; /* السماح بظهور القوائم فوق العناصر */
         }
         
         .div-rectangular {
@@ -39,7 +40,8 @@
             cursor: pointer;
             text-align: center;
             margin-bottom: 10px;
-            position: relative; /* مهم علشان القوائم تكون بالنسبة للزر فقط */
+            position: relative; 
+            z-index: 1; /* جعل الأزرار تحت القوائم */
         }
         
         .div-rectangular:hover {
@@ -66,7 +68,7 @@
             min-width: 180px;
             padding: 10px 0;
             text-align: center;
-            z-index: 1000; /* لجعلها تظهر فوق أي عنصر آخر */
+            z-index: 1000 !important; /* رفع القائمة فوق أي عنصر آخر */
             max-height: 200px;
             overflow-y: auto;
         }
