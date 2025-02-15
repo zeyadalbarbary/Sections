@@ -22,6 +22,7 @@
             gap: 30px;
             flex-wrap: wrap;
             padding: 15px;
+            position: relative;
         }
         
         .div-rectangular {
@@ -38,7 +39,7 @@
             cursor: pointer;
             text-align: center;
             margin-bottom: 10px;
-            position: relative; /* لإبقاء القائمة تابعة للزر */
+            position: relative; /* مهم علشان القوائم تكون بالنسبة للزر فقط */
         }
         
         .div-rectangular:hover {
@@ -65,7 +66,7 @@
             min-width: 180px;
             padding: 10px 0;
             text-align: center;
-            z-index: 999;
+            z-index: 1000; /* لجعلها تظهر فوق أي عنصر آخر */
             max-height: 200px;
             overflow-y: auto;
         }
