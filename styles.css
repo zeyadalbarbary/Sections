@@ -63,6 +63,8 @@ a:visited, a:active, a:hover {
     position: absolute;
     top: 100%;
     left: 50%;
+    width: 100%;
+    min-width: unset;
     transform: translateX(-50%);
     background: #fff;
     border-radius: 20px;
@@ -71,7 +73,7 @@ a:visited, a:active, a:hover {
     padding: 10px 0;
     text-align: center;
     z-index: 1000;
-    max-height: 200px;
+    max-height: calc(5 * 45px); /* تحديد الارتفاع ليعرض 5 اختيارات فقط */
     overflow-y: auto;
 }
 
@@ -81,21 +83,14 @@ a:visited, a:active, a:hover {
     text-decoration: none;
     color: #33348e;
     font-weight: bold;
+    height: 40px; /* جعل كل عنصر بنفس الارتفاع */
+    line-height: 40px; /* توسيط النص */
 }
 
 .dropdown a:hover {
     background: #ffde59;
 }
 
-.dropdown {
-min-width: 100px;
-max-height: 100px;
-font-size: 0.7em;
-}
-
-.dropdown a {
-padding: 3px;
-}
 .dropdown::-webkit-scrollbar {
 width: 8px; /* عرض الشريط */
 }
