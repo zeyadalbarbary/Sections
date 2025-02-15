@@ -153,7 +153,7 @@ background: #ff7a26; /* لون أغمق عند التمرير */
         min-width: unset;
         font-size: 0.8em;
         padding: 5px 0;
-        max-height: calc(7 * 45px); /* تحديد الارتفاع ليعرض 5 اختيارات فقط */
+        max-height: calc(5 * 45px); /* تحديد الارتفاع ليعرض 5 اختيارات فقط */
     }
 
     .dropdown a {
