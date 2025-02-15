@@ -77,16 +77,47 @@ body {
 .dropdown a:hover {
     background: #ffde59;
 }
+
+.dropdown {
+min-width: 100px;
+max-height: 100px;
+font-size: 0.7em;
+}
+
+.dropdown a {
+padding: 3px;
+}
+.dropdown::-webkit-scrollbar {
+width: 8px; /* عرض الشريط */
+}
+
+.dropdown::-webkit-scrollbar-track {
+background: #f8f4f2; /* لون الخلفية */
+border-radius: 10px;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+background: #ff914d; /* لون الشريط */
+border-radius: 10px;
+border: 2px solid #f8f4f2; /* مسافة داخلية */
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+background: #ff7a26; /* لون أغمق عند التمرير */
+}
 .whatsapp-container {
     text-align: center;
-    margin-top: 3px;
+    margin-top: 0%;
 }
 
 .whatsapp-image {
-    width: 100%; /* الحجم الافتراضي على الكمبيوتر */
+    width: 80%; /* الحجم الافتراضي على الكمبيوتر */
     max-width: 1200px; /* أقصى حجم للصورة */
-    height: auto;
     transition: all 0.3s ease;
+}
+
+.div-rectangular h6 {
+    font-size: 0.8em;
 }
 /* تحسين التوافق مع الموبايل */
 @media (max-width: 768px) {
@@ -114,40 +145,8 @@ body {
     .dropdown a {
         padding: 8px;
     }
-}
-
-    .div-rectangular h6 {
-        font-size: 0.8em;
-    }
-
-.dropdown {
-    min-width: 100px;
-    max-height: 100px;
-    font-size: 0.7em;
-}
-
-.dropdown a {
-    padding: 3px;
-}
-.dropdown::-webkit-scrollbar {
-    width: 8px; /* عرض الشريط */
-}
-
-.dropdown::-webkit-scrollbar-track {
-    background: #f8f4f2; /* لون الخلفية */
-    border-radius: 10px;
-}
-
-.dropdown::-webkit-scrollbar-thumb {
-    background: #ff914d; /* لون الشريط */
-    border-radius: 10px;
-    border: 2px solid #f8f4f2; /* مسافة داخلية */
-}
-
-.dropdown::-webkit-scrollbar-thumb:hover {
-    background: #ff7a26; /* لون أغمق عند التمرير */
-}
-.whatsapp-image {
-        width: 100%; /* ربع حجمها الأصلي */
+    .whatsapp-image {
+        width: 50%; /* ربع حجمها الأصلي */
         max-width: 1200px; /* أقصى عرض على الموبايل */
     }
+}
