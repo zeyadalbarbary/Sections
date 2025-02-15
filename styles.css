@@ -1,5 +1,9 @@
 body {
-    font-family: 'Twilio Sans', sans-serif;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 400; /* أو 300 إذا كنت تريد خطًا أنحف */
+    color: #5C7585; /* لون مشابه للون الموجود في الصورة */
+    line-height: 1.8; /* لتوفير مسافة جيدة بين الأسطر */
+    text-align: right; /* لأن النص عربي */
 }
 
 .container {
@@ -93,4 +97,13 @@ body {
     .div-rectangular h6 {
         font-size: 0.8em;
     }
+}
+.dropdown {
+    min-width: 100px;
+    max-height: 100px;
+    font-size: 0.7em;
+}
+
+.dropdown a {
+    padding: 3px;
 }
