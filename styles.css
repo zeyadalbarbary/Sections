@@ -97,13 +97,24 @@ body {
     .div-rectangular h6 {
         font-size: 0.8em;
     }
-}
-.dropdown {
-    min-width: 100px;
-    max-height: 100px;
-    font-size: 0.7em;
-}
-
 .dropdown a {
     padding: 3px;
+}
+.dropdown::-webkit-scrollbar {
+    width: 8px; /* عرض الشريط */
+}
+
+.dropdown::-webkit-scrollbar-track {
+    background: #f8f4f2; /* لون الخلفية */
+    border-radius: 10px;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+    background: #ff914d; /* لون الشريط */
+    border-radius: 10px;
+    border: 2px solid #f8f4f2; /* مسافة داخلية */
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+    background: #ff7a26; /* لون أغمق عند التمرير */
 }
