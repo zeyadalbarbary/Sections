@@ -83,7 +83,7 @@ body {
 }
 
 .whatsapp-image {
-    width: 100%; /* الحجم الافتراضي على الكمبيوتر */
+    width: 500%; /* الحجم الافتراضي على الكمبيوتر */
     max-width: 1200px; /* أقصى حجم للصورة */
     height: auto;
     transition: all 0.3s ease;
@@ -148,6 +148,6 @@ body {
     background: #ff7a26; /* لون أغمق عند التمرير */
 }
 .whatsapp-image {
-        width: 25%; /* ربع حجمها الأصلي */
+        width: 100%; /* ربع حجمها الأصلي */
         max-width: 1200px; /* أقصى عرض على الموبايل */
     }
