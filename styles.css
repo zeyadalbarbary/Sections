@@ -53,6 +53,8 @@ a:visited, a:active, a:hover {
     color: #33348e;
     font-weight: bold;
     user-select: none;
+    text-decoration: none; /* تأكد من عدم وجود خط */
+    border-bottom: none;
 }
 
 /* القوائم المنسدلة */
