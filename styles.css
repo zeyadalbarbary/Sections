@@ -75,12 +75,14 @@ body {
 }
 
 /* تحسين التوافق مع الموبايل */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 1px;
         justify-content: center;
+        width: 0%;
+
     }
 
     .div-rectangular {
