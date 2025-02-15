@@ -94,9 +94,28 @@ body {
         height: 50px;
     }
 
+    .dropdown {
+        width: 100%;
+        min-width: unset;
+        font-size: 0.8em;
+        padding: 5px 0;
+    }
+
+    .dropdown a {
+        padding: 8px;
+    }
+}
+
     .div-rectangular h6 {
         font-size: 0.8em;
     }
+
+.dropdown {
+    min-width: 100px;
+    max-height: 100px;
+    font-size: 0.7em;
+}
+
 .dropdown a {
     padding: 3px;
 }
