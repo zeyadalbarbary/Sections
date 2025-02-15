@@ -48,7 +48,7 @@ body {
 .dropdown {
     display: none;
     position: absolute;
-    top: 100%; /* فتح القائمة أسفل الزر */
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: #fff;
@@ -57,7 +57,7 @@ body {
     min-width: 180px;
     padding: 10px 0;
     text-align: center;
-    z-index: 1000; /* لضمان ظهورها فوق كل العناصر */
+    z-index: 1000;
     max-height: 200px;
     overflow-y: auto;
 }
@@ -72,4 +72,23 @@ body {
 
 .dropdown a:hover {
     background: #ffde59;
+}
+
+/* تحسين التوافق مع الموبايل */
+@media (max-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .div-rectangular {
+        width: 100px;
+        height: 50px;
+    }
+
+    .div-rectangular h6 {
+        font-size: 0.8em;
+    }
 }
