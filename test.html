@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أقسام استوربوكس - تصميم حديث</title>
+    <title>استوربوكس - متجر الكتب والأدوات المكتبية</title>
+    <meta name="description" content="استوربوكس - متجر الكتب والروايات، الكتب الجامعية، الأدوات المكتبية وكل ما يخص المدارس والجامعات والتعليم والطباعة. تواصل معنا: 01009749274">
+    <meta name="keywords" content="استوربوكس, كتب, روايات, كتب جامعية, أدوات مكتبية, قرطاسية, طباعة, تعليم, مدارس, جامعات">
+    <meta name="author" content="استوربوكس">
+    <meta property="og:title" content="استوربوكس - متجر الكتب والأدوات المكتبية">
+    <meta property="og:description" content="متجر الكتب والروايات، الكتب الجامعية، الأدوات المكتبية وكل ما يخص التعليم والطباعة">
+    <meta property="og:url" content="https://storebooks.shop">
+    <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -19,7 +26,7 @@
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -30,53 +37,54 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(2, 1fr);
-            gap: 20px;
+            gap: 15px;
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
         
         .category-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
             transition: all 0.3s ease;
             position: relative;
             height: 100%;
         }
         
         .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
         
         .category-header {
             background: linear-gradient(135deg, #ff914d 0%, #ff7a26 100%);
-            padding: 20px;
+            padding: 16px;
             color: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            height: 90px;
+            height: 80px;
         }
         
         .category-title {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         
         .category-icon {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
         }
         
         .dropdown-icon {
             transition: transform 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .dropdown-icon.active {
@@ -86,29 +94,30 @@
         .category-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease;
+            transition: max-height 0.4s ease;
         }
         
         .category-content.active {
-            max-height: 400px;
+            max-height: 350px;
         }
         
         .category-links {
-            padding: 15px 20px;
+            padding: 12px 16px;
             display: grid;
-            gap: 12px;
+            gap: 10px;
         }
         
         .category-link {
             display: flex;
             align-items: center;
-            padding: 12px 15px;
+            padding: 10px 12px;
             background: #f8f9fa;
-            border-radius: 12px;
+            border-radius: 10px;
             color: #33348e;
             font-weight: 500;
             transition: all 0.2s ease;
             text-decoration: none;
+            font-size: 0.95rem;
         }
         
         .category-link:hover {
@@ -117,42 +126,47 @@
         }
         
         .category-link i {
-            margin-left: 10px;
-            font-size: 0.9rem;
+            margin-left: 8px;
+            font-size: 0.85rem;
         }
         
         .whatsapp-container {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 25px;
             width: 100%;
         }
         
         .whatsapp-image {
             width: 40%;
-            max-width: 600px;
+            max-width: 550px;
             transition: all 0.3s ease;
         }
         
-        /* تأثيرات للشاشات الصغيرة */
+        /* تحسينات للشاشات المتوسطة */
         @media (max-width: 900px) {
             .container {
-                gap: 15px;
-                padding: 15px;
+                gap: 12px;
+                padding: 12px;
             }
             
             .category-header {
-                padding: 15px;
-                height: 80px;
+                padding: 14px;
+                height: 75px;
             }
             
             .category-title {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+            }
+            
+            .whatsapp-image {
+                width: 50%;
             }
         }
         
+        /* تحسينات للشاشات الصغيرة */
         @media (max-width: 768px) {
             .container {
-                gap: 12px;
+                gap: 10px;
                 padding: 10px;
             }
             
@@ -162,59 +176,11 @@
             }
             
             .category-title {
-                font-size: 1.1rem;
-            }
-            
-            .category-icon {
-                font-size: 1.4rem;
-            }
-            
-            .whatsapp-image {
-                width: 60%;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                gap: 10px;
-                padding: 8px;
-            }
-            
-            .category-header {
-                padding: 10px;
-                height: 60px;
-            }
-            
-            .category-title {
                 font-size: 1rem;
             }
             
             .category-icon {
                 font-size: 1.2rem;
-            }
-            
-            .whatsapp-image {
-                width: 80%;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                gap: 8px;
-            }
-            
-            .category-header {
-                padding: 8px;
-                height: 55px;
-            }
-            
-            .category-title {
-                font-size: 0.9rem;
-                gap: 5px;
-            }
-            
-            .category-icon {
-                font-size: 1.1rem;
             }
             
             .category-links {
@@ -228,13 +194,92 @@
             }
             
             .whatsapp-image {
-                width: 95%;
+                width: 65%;
+            }
+        }
+        
+        /* تحسينات للشاشات الصغيرة جدًا */
+        @media (max-width: 600px) {
+            .container {
+                gap: 8px;
+                padding: 8px;
+            }
+            
+            .category-header {
+                padding: 10px;
+                height: 65px;
+            }
+            
+            .category-title {
+                font-size: 0.95rem;
+                gap: 6px;
+            }
+            
+            .category-icon {
+                font-size: 1.1rem;
+            }
+            
+            .dropdown-icon {
+                font-size: 0.8rem;
+            }
+            
+            .whatsapp-image {
+                width: 80%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                gap: 7px;
+                padding: 7px;
+            }
+            
+            .category-header {
+                padding: 9px;
+                height: 60px;
+            }
+            
+            .category-title {
+                font-size: 0.9rem;
+                gap: 5px;
+            }
+            
+            .category-icon {
+                font-size: 1rem;
+            }
+            
+            .category-links {
+                padding: 8px 10px;
+                gap: 7px;
+            }
+            
+            .category-link {
+                padding: 7px 9px;
+                font-size: 0.85rem;
+            }
+            
+            .whatsapp-image {
+                width: 90%;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .category-header {
+                height: 55px;
+            }
+            
+            .category-title {
+                font-size: 0.85rem;
+            }
+            
+            .category-icon {
+                font-size: 0.9rem;
             }
         }
         
         /* تأثيرات للرسوم المتحركة */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
@@ -264,7 +309,7 @@
             <div class="category-content">
                 <div class="category-links">
                     <a href="https://storebooks.shop/s/Products" target="_top" class="category-link">
-                        عرض جميع الكتب المضافة حديثاً
+                        عرض الكتب المضافة حديثاً
                         <i class="fas fa-arrow-left"></i>
                     </a>
                 </div>
@@ -325,8 +370,6 @@
                     <a href="https://storebooks.shop/s/Products?type=إدارة أعمال" target="_top" class="category-link">إدارة أعمال <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=تنمية ذاتيه" target="_top" class="category-link">تنمية ذاتية <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=علمى" target="_top" class="category-link">علمي <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=أدب" target="_top" class="category-link">أدب <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=تاريخ" target="_top" class="category-link">تاريخ <i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>
@@ -346,8 +389,6 @@
                     <a href="https://storebooks.shop/s/Products?type=أدهم الشرقاوي" target="_top" class="category-link">أدهم الشرقاوي <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=يوسف الحسيني" target="_top" class="category-link">يوسف الحسيني <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=أحمد خالد مصطفى" target="_top" class="category-link">أحمد خالد مصطفى <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=حنان لاشين" target="_top" class="category-link">حنان لاشين <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=منى سلامة" target="_top" class="category-link">منى سلامة <i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>
@@ -367,8 +408,6 @@
                     <a href="https://storebooks.shop/s/Products?type=دون" target="_top" class="category-link">دون <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=الشروق" target="_top" class="category-link">الشروق <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=الكرمة" target="_top" class="category-link">الكرمة <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=كيان" target="_top" class="category-link">كيان <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=المصرية اللبنانية" target="_top" class="category-link">المصرية اللبنانية <i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>
@@ -390,23 +429,39 @@
                     const content = this.nextElementSibling;
                     const icon = this.querySelector('.dropdown-icon');
                     
-                    // إغلاق جميع الأقسام الأخرى
-                    document.querySelectorAll('.category-content').forEach(item => {
-                        if (item !== content) {
-                            item.classList.remove('active');
-                        }
-                    });
-                    
-                    document.querySelectorAll('.dropdown-icon').forEach(i => {
-                        if (i !== icon) {
-                            i.classList.remove('active');
-                        }
-                    });
-                    
-                    // فتح أو إغلاق القسم الحالي
+                    // التبديل بين فتح وإغلاق القسم الحالي فقط
                     content.classList.toggle('active');
                     icon.classList.toggle('active');
+                    
+                    // إغلاق جميع الأقسام الأخرى عند فتح قسم جديد
+                    if (content.classList.contains('active')) {
+                        document.querySelectorAll('.category-content').forEach(item => {
+                            if (item !== content && item.classList.contains('active')) {
+                                item.classList.remove('active');
+                                item.previousElementSibling.querySelector('.dropdown-icon').classList.remove('active');
+                            }
+                        });
+                    }
                 });
+            });
+            
+            // منع إغلاق القوائم عند النقر عليها
+            document.querySelectorAll('.category-content').forEach(content => {
+                content.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+            
+            // إغلاق القوائم عند النقر خارجها
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.category-card')) {
+                    document.querySelectorAll('.category-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.querySelectorAll('.dropdown-icon').forEach(icon => {
+                        icon.classList.remove('active');
+                    });
+                }
             });
         });
     </script>
