@@ -30,7 +30,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(2, 1fr);
-            gap: 25px;
+            gap: 20px;
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
@@ -133,20 +133,11 @@
             transition: all 0.3s ease;
         }
         
-        /* تأثيرات للجوال */
-        @media (max-width: 1024px) {
+        /* تأثيرات للشاشات الصغيرة */
+        @media (max-width: 900px) {
             .container {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-                gap: 20px;
-                padding: 10px;
+                gap: 15px;
+                padding: 15px;
             }
             
             .category-header {
@@ -157,25 +148,82 @@
             .category-title {
                 font-size: 1.2rem;
             }
-            
-            .category-links {
-                padding: 10px 15px;
-            }
-            
-            .whatsapp-image {
-                width: 90%;
-                max-width: 500px;
-            }
         }
         
-        /* تأثيرات للشاشات الصغيرة جدًا */
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
+            .container {
+                gap: 12px;
+                padding: 10px;
+            }
+            
+            .category-header {
+                padding: 12px;
+                height: 70px;
+            }
+            
             .category-title {
                 font-size: 1.1rem;
             }
             
-            .category-link {
+            .category-icon {
+                font-size: 1.4rem;
+            }
+            
+            .whatsapp-image {
+                width: 60%;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                gap: 10px;
+                padding: 8px;
+            }
+            
+            .category-header {
                 padding: 10px;
+                height: 60px;
+            }
+            
+            .category-title {
+                font-size: 1rem;
+            }
+            
+            .category-icon {
+                font-size: 1.2rem;
+            }
+            
+            .whatsapp-image {
+                width: 80%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                gap: 8px;
+            }
+            
+            .category-header {
+                padding: 8px;
+                height: 55px;
+            }
+            
+            .category-title {
+                font-size: 0.9rem;
+                gap: 5px;
+            }
+            
+            .category-icon {
+                font-size: 1.1rem;
+            }
+            
+            .category-links {
+                padding: 10px 12px;
+                gap: 8px;
+            }
+            
+            .category-link {
+                padding: 8px 10px;
                 font-size: 0.9rem;
             }
             
