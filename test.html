@@ -62,7 +62,6 @@
             text-align: center;
             margin-bottom: 1px;
             position: relative;
-            z-index: 10;
         }
 
         .div-rectangular:hover {
@@ -111,7 +110,7 @@
         .dropdown.active {
             display: block;
             animation: fadeIn 0.3s ease;
-            z-index: 1001; /* قيمة أعلى لضمان ظهورها فوق كل شيء */
+            z-index: 9999; /* قيمة أعلى لضمان ظهورها فوق كل شيء */
         }
 
         @keyframes fadeIn {
@@ -203,7 +202,6 @@
                 width: 100%;
                 height: 60px;
                 margin-bottom: 0;
-z-index: 10;
             }
 
             .div-rectangular h6 {
