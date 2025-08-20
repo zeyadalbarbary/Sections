@@ -7,10 +7,6 @@
     <meta name="description" content="استوربوكس - متجر الكتب والروايات، الكتب الجامعية، الأدوات المكتبية وكل ما يخص المدارس والجامعات والتعليم والطباعة. تواصل معنا: 01009749274">
     <meta name="keywords" content="استوربوكس, كتب, روايات, كتب جامعية, أدوات مكتبية, قرطاسية, طباعة, تعليم, مدارس, جامعات">
     <meta name="author" content="استوربوكس">
-    <meta property="og:title" content="استوربوكس - متجر الكتب والأدوات المكتبية">
-    <meta property="og:description" content="متجر الكتب والروايات، الكتب الجامعية، الأدوات المكتبية وكل ما يخص التعليم والطباعة">
-    <meta property="og:url" content="https://storebooks.shop">
-    <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -22,7 +18,7 @@
         
         body {
             font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #f8f4f2 0%, #e9f0f7 100%);
+            background: linear-gradient(to bottom, #f8f4f2, #e6eeff);
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
@@ -40,36 +36,46 @@
         }
         
         .logo {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: #33348e;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #33348e, #ff914d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .tagline {
             color: #5C7585;
-            font-size: 1.1rem;
-            max-width: 600px;
+            font-size: 1.2rem;
+            max-width: 700px;
             margin: 0 auto;
+            line-height: 1.8;
         }
         
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 20px;
+        .main-container {
+            display: flex;
+            flex-direction: column;
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 25px;
+            width: 100%;
+            margin-bottom: 40px;
         }
         
         .category-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             position: relative;
             height: 100%;
@@ -77,30 +83,31 @@
         }
         
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
             border-color: #ff914d;
         }
         
         .category-header {
             background: linear-gradient(135deg, #ff914d 0%, #ff7a26 100%);
-            padding: 20px;
+            padding: 25px 20px;
             color: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            height: 90px;
+            min-height: 100px;
         }
         
         .category-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         .dropdown-icon {
             transition: transform 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         
         .dropdown-icon.active {
@@ -114,26 +121,27 @@
         }
         
         .category-content.active {
-            max-height: 220px;
+            max-height: 250px;
         }
         
         .category-links {
             padding: 0;
             display: flex;
             flex-direction: column;
-            max-height: 220px;
+            max-height: 250px;
             overflow-y: auto;
         }
         
         .category-link {
-            padding: 12px 20px;
+            padding: 14px 20px;
             color: #33348e;
             font-weight: 500;
             transition: all 0.2s ease;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 1rem;
             border-bottom: 1px solid #f0f0f0;
             display: block;
+            position: relative;
         }
         
         .category-link:hover {
@@ -141,8 +149,15 @@
             padding-right: 25px;
         }
         
+        .category-link:hover::after {
+            content: "→";
+            position: absolute;
+            left: 15px;
+            transition: all 0.3s ease;
+        }
+        
         .category-links::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
         
         .category-links::-webkit-scrollbar-track {
@@ -159,187 +174,229 @@
             background: #ff7a26;
         }
         
-        .social-section {
+        .action-section {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             margin: 30px 0;
             width: 100%;
+            flex-wrap: wrap;
         }
         
-        .social-link {
+        .action-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            gap: 10px;
+            padding: 15px 30px;
             background: linear-gradient(135deg, #33348e 0%, #2a2b7a 100%);
             color: white;
-            border-radius: 50%;
-            font-size: 1.3rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             text-decoration: none;
+            box-shadow: 0 5px 15px rgba(51, 52, 142, 0.3);
         }
         
-        .social-link:hover {
+        .action-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(51, 52, 142, 0.3);
+            box-shadow: 0 8px 20px rgba(51, 52, 142, 0.4);
         }
         
         .whatsapp-section {
             text-align: center;
-            margin-top: 20px;
+            margin: 30px 0;
             width: 100%;
         }
         
         .whatsapp-title {
             color: #33348e;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: 700;
         }
         
         .whatsapp-image {
-            width: 40%;
-            max-width: 500px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            max-width: 550px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
             transition: all 0.3s ease;
         }
         
         .whatsapp-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
         }
         
         .footer {
             margin-top: 40px;
             text-align: center;
             color: #5C7585;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             width: 100%;
-            padding: 15px;
+            padding: 20px;
             border-top: 1px solid #eaeaea;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
         }
         
         .contact-info {
             margin: 10px 0;
+            font-weight: 500;
+        }
+        
+        .copyright {
+            margin-top: 15px;
+            font-size: 0.9rem;
         }
         
         /* تحسينات للشاشات المتوسطة */
         @media (max-width: 1024px) {
-            .container {
-                gap: 15px;
+            .grid-container {
+                gap: 20px;
             }
             
             .category-header {
-                padding: 18px;
-                height: 85px;
+                padding: 22px 18px;
+                min-height: 95px;
+            }
+            
+            .category-title {
+                font-size: 1.3rem;
+            }
+            
+            .whatsapp-image {
+                width: 55%;
+            }
+        }
+        
+        /* تحسينات للشاشات الصغيرة */
+        @media (max-width: 900px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+            }
+            
+            .logo {
+                font-size: 2.4rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+            
+            .category-header {
+                padding: 20px;
+                min-height: 90px;
             }
             
             .category-title {
                 font-size: 1.2rem;
             }
             
-            .whatsapp-image {
-                width: 50%;
-            }
-        }
-        
-        /* تحسينات للشاشات الصغيرة */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 1fr);
-                gap: 15px;
-                padding: 15px;
-            }
-            
-            .logo {
-                font-size: 2rem;
-            }
-            
-            .tagline {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-            
-            .category-header {
-                padding: 15px;
-                height: 80px;
-            }
-            
-            .category-title {
-                font-size: 1.1rem;
-            }
-            
             .category-link {
-                padding: 10px 15px;
-                font-size: 0.9rem;
+                padding: 12px 18px;
+                font-size: 0.95rem;
             }
             
             .whatsapp-image {
-                width: 70%;
+                width: 65%;
+            }
+            
+            .action-button {
+                padding: 14px 25px;
+                font-size: 1rem;
             }
         }
         
         /* تحسينات للشاشات الصغيرة جدًا */
-        @media (max-width: 480px) {
-            .container {
+        @media (max-width: 600px) {
+            .grid-container {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto;
-                gap: 12px;
-                padding: 10px;
+                gap: 18px;
             }
             
             .header {
-                margin-bottom: 20px;
+                margin-bottom: 25px;
             }
             
             .logo {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
             }
             
             .category-header {
-                padding: 12px;
-                height: 70px;
+                padding: 18px;
+                min-height: 85px;
             }
             
             .category-title {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .dropdown-icon {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .category-content.active {
-                max-height: 200px;
+                max-height: 230px;
             }
             
             .category-link {
-                padding: 8px 12px;
-                font-size: 0.85rem;
+                padding: 11px 16px;
+                font-size: 0.9rem;
             }
             
             .whatsapp-image {
-                width: 90%;
+                width: 85%;
             }
             
-            .social-link {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
+            .action-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .action-button {
+                width: 80%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .category-header {
+                min-height: 80px;
+            }
+            
+            .whatsapp-image {
+                width: 95%;
+            }
+            
+            .action-button {
+                width: 90%;
+                padding: 12px 20px;
             }
         }
         
         /* تأثيرات للرسوم المتحركة */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
         .category-card {
-            animation: fadeIn 0.5s ease forwards;
+            animation: fadeIn 0.6s ease forwards;
         }
         
         .category-card:nth-child(1) { animation-delay: 0.1s; }
@@ -353,125 +410,128 @@
 <body>
     <div class="header">
         <div class="logo">استوربوكس</div>
-        <div class="tagline">متجر الكتب والروايات، الكتب الجامعية، الأدوات المكتبية وكل ما يخص التعليم والطباعة</div>
+        <div class="tagline">وجهتك الأولى للكتب والروايات، الكتب الجامعية، والأدوات المكتبية. كل ما تحتاجه للتعليم والطباعة في مكان واحد.</div>
     </div>
     
-    <div class="container">
-        <!-- قسم الكتب المضافة حديثاً -->
-        <div class="category-card">
-            <div class="category-header">
-                <div class="category-title">المضاف حديثاً</div>
-                <i class="fas fa-chevron-down dropdown-icon"></i>
+    <div class="main-container">
+        <div class="grid-container">
+            <!-- قسم الكتب المضافة حديثاً -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-title">المضاف حديثاً</div>
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </div>
+                <div class="category-content">
+                    <div class="category-links">
+                        <a href="https://storebooks.shop/s/Products" target="_top" class="category-link">عرض الكتب المضافة حديثاً</a>
+                    </div>
+                </div>
             </div>
-            <div class="category-content">
-                <div class="category-links">
-                    <a href="https://storebooks.shop/s/Products" target="_top" class="category-link">عرض الكتب المضافة حديثاً</a>
+            
+            <!-- قسم طلبات الجملة -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-title">طلبات الجملة</div>
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </div>
+                <div class="category-content">
+                    <div class="category-links">
+                        <a href="https://storebooks.shop/s/p251786" target="_top" class="category-link">تقديم طلب جملة</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم الكتب الجامعية -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-title">الكتب الجامعية</div>
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </div>
+                <div class="category-content">
+                    <div class="category-links">
+                        <a href="https://universities.storebooks.shop" target="_top" class="category-link">استعرض الكتب الجامعية</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم أقسام الكتب -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-title">أقسام الكتب</div>
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </div>
+                <div class="category-content">
+                    <div class="category-links">
+                        <a href="https://storebooks.shop/s/Products?type=روايات" target="_top" class="category-link">روايات</a>
+                        <a href="https://storebooks.shop/s/Products?type=ديني" target="_top" class="category-link">ديني</a>
+                        <a href="https://storebooks.shop/s/Products?type=إدارة أعمال" target="_top" class="category-link">إدارة أعمال</a>
+                        <a href="https://storebooks.shop/s/Products?type=تنمية ذاتيه" target="_top" class="category-link">تنمية ذاتية</a>
+                        <a href="https://storebooks.shop/s/Products?type=علمى" target="_top" class="category-link">علمي</a>
+                        <a href="https://storebooks.shop/s/Products?type=أدب" target="_top" class="category-link">أدب</a>
+                        <a href="https://storebooks.shop/s/Products?type=تاريخ" target="_top" class="category-link">تاريخ</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم المؤلفين -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-title">المؤلفين</div>
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </div>
+                <div class="category-content">
+                    <div class="category-links">
+                        <a href="https://storebooks.shop/s/Products?type=عمرو عبدالحميد" target="_top" class="category-link">عمرو عبد الحميد</a>
+                        <a href="https://storebooks.shop/s/Products?type=أدهم الشرقاوي" target="_top" class="category-link">أدهم الشرقاوي</a>
+                        <a href="https://storebooks.shop/s/Products?type=يوسف الحسيني" target="_top" class="category-link">يوسف الحسيني</a>
+                        <a href="https://storebooks.shop/s/Products?type=أحمد خالد مصطفى" target="_top" class="category-link">أحمد خالد مصطفى</a>
+                        <a href="https://storebooks.shop/s/Products?type=حنان لاشين" target="_top" class="category-link">حنان لاشين</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم دور النشر -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-title">دور النشر</div>
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </div>
+                <div class="category-content">
+                    <div class="category-links">
+                        <a href="https://storebooks.shop/s/Products?type=عصير الكتب" target="_top" class="category-link">عصير الكتب</a>
+                        <a href="https://storebooks.shop/s/Products?type=دون" target="_top" class="category-link">دون</a>
+                        <a href="https://storebooks.shop/s/Products?type=الشروق" target="_top" class="category-link">الشروق</a>
+                        <a href="https://storebooks.shop/s/Products?type=الكرمة" target="_top" class="category-link">الكرمة</a>
+                        <a href="https://storebooks.shop/s/Products?type=كيان" target="_top" class="category-link">كيان</a>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <!-- قسم طلبات الجملة -->
-        <div class="category-card">
-            <div class="category-header">
-                <div class="category-title">طلبات الجملة</div>
-                <i class="fas fa-chevron-down dropdown-icon"></i>
-            </div>
-            <div class="category-content">
-                <div class="category-links">
-                    <a href="https://storebooks.shop/s/p251786" target="_top" class="category-link">تقديم طلب جملة</a>
-                </div>
-            </div>
+        <div class="action-section">
+            <a href="https://www.facebook.com/storebooks.shop" class="action-button" target="_blank">
+                <i class="fab fa-facebook-f"></i> فيسبوك
+            </a>
+            <a href="https://www.instagram.com/storebooks.shop" class="action-button" target="_blank">
+                <i class="fab fa-instagram"></i> انستجرام
+            </a>
+            <a href="https://twitter.com/storebooks_shop" class="action-button" target="_blank">
+                <i class="fab fa-twitter"></i> تويتر
+            </a>
         </div>
         
-        <!-- قسم الكتب الجامعية -->
-        <div class="category-card">
-            <div class="category-header">
-                <div class="category-title">الكتب الجامعية</div>
-                <i class="fas fa-chevron-down dropdown-icon"></i>
-            </div>
-            <div class="category-content">
-                <div class="category-links">
-                    <a href="https://universities.storebooks.shop" target="_top" class="category-link">استعرض الكتب الجامعية</a>
-                </div>
-            </div>
+        <div class="whatsapp-section">
+            <div class="whatsapp-title">تواصل معنا عبر واتساب</div>
+            <a href="https://wa.me/201009749274?text=أهلا%20يا%20استوربوكس%20✨" target="_blank">
+                <img src="https://fatoradrive.blob.core.windows.net/fqe00222025/media-LVOFT.jpg" alt="تواصل عبر واتساب" class="whatsapp-image">
+            </a>
         </div>
         
-        <!-- قسم أقسام الكتب -->
-        <div class="category-card">
-            <div class="category-header">
-                <div class="category-title">أقسام الكتب</div>
-                <i class="fas fa-chevron-down dropdown-icon"></i>
-            </div>
-            <div class="category-content">
-                <div class="category-links">
-                    <a href="https://storebooks.shop/s/Products?type=روايات" target="_top" class="category-link">روايات</a>
-                    <a href="https://storebooks.shop/s/Products?type=ديني" target="_top" class="category-link">ديني</a>
-                    <a href="https://storebooks.shop/s/Products?type=إدارة أعمال" target="_top" class="category-link">إدارة أعمال</a>
-                    <a href="https://storebooks.shop/s/Products?type=تنمية ذاتيه" target="_top" class="category-link">تنمية ذاتية</a>
-                    <a href="https://storebooks.shop/s/Products?type=علمى" target="_top" class="category-link">علمي</a>
-                    <a href="https://storebooks.shop/s/Products?type=أدب" target="_top" class="category-link">أدب</a>
-                    <a href="https://storebooks.shop/s/Products?type=تاريخ" target="_top" class="category-link">تاريخ</a>
-                </div>
-            </div>
+        <div class="footer">
+            <div class="contact-info">رقم الهاتف: 01009749274</div>
+            <div>البريد الإلكتروني: info@storebooks.shop</div>
+            <div class="copyright">© 2023 استوربوكس. جميع الحقوق محفوظة</div>
         </div>
-        
-        <!-- قسم المؤلفين -->
-        <div class="category-card">
-            <div class="category-header">
-                <div class="category-title">المؤلفين</div>
-                <i class="fas fa-chevron-down dropdown-icon"></i>
-            </div>
-            <div class="category-content">
-                <div class="category-links">
-                    <a href="https://storebooks.shop/s/Products?type=عمرو عبدالحميد" target="_top" class="category-link">عمرو عبد الحميد</a>
-                    <a href="https://storebooks.shop/s/Products?type=أدهم الشرقاوي" target="_top" class="category-link">أدهم الشرقاوي</a>
-                    <a href="https://storebooks.shop/s/Products?type=يوسف الحسيني" target="_top" class="category-link">يوسف الحسيني</a>
-                    <a href="https://storebooks.shop/s/Products?type=أحمد خالد مصطفى" target="_top" class="category-link">أحمد خالد مصطفى</a>
-                    <a href="https://storebooks.shop/s/Products?type=حنان لاشين" target="_top" class="category-link">حنان لاشين</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- قسم دور النشر -->
-        <div class="category-card">
-            <div class="category-header">
-                <div class="category-title">دور النشر</div>
-                <i class="fas fa-chevron-down dropdown-icon"></i>
-            </div>
-            <div class="category-content">
-                <div class="category-links">
-                    <a href="https://storebooks.shop/s/Products?type=عصير الكتب" target="_top" class="category-link">عصير الكتب</a>
-                    <a href="https://storebooks.shop/s/Products?type=دون" target="_top" class="category-link">دون</a>
-                    <a href="https://storebooks.shop/s/Products?type=الشروق" target="_top" class="category-link">الشروق</a>
-                    <a href="https://storebooks.shop/s/Products?type=الكرمة" target="_top" class="category-link">الكرمة</a>
-                    <a href="https://storebooks.shop/s/Products?type=كيان" target="_top" class="category-link">كيان</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="social-section">
-        <a href="https://www.facebook.com/storebooks.shop" class="social-link" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/storebooks.shop" class="social-link" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://twitter.com/storebooks_shop" class="social-link" target="_blank">
-            <i class="fab fa-twitter"></i>
-        </a>
-    </div>
-    
-    <div class="whatsapp-section">
-        <div class="whatsapp-title">تواصل معنا عبر واتساب</div>
-        <a href="https://wa.me/201009749274?text=أهلا%20يا%20استوربوكس%20✨" target="_blank">
-            <img src="https://fatoradrive.blob.core.windows.net/fqe00222025/media-LVOFT.jpg" alt="تواصل عبر واتساب" class="whatsapp-image">
-        </a>
-    </div>
-    
-    <div class="footer">
-        <div class="contact-info">رقم الهاتف: 01009749274</div>
-        <div>© 2023 استوربوكس. جميع الحقوق محفوظة</div>
     </div>
 
     <script>
