@@ -73,18 +73,11 @@
         .category-title {
             font-size: 1.2rem;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .category-icon {
-            font-size: 1.4rem;
         }
         
         .dropdown-icon {
             transition: transform 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
         
         .dropdown-icon.active {
@@ -98,36 +91,47 @@
         }
         
         .category-content.active {
-            max-height: 350px;
+            max-height: 250px; /* ارتفاع يكفي لـ 5 عناصر */
         }
         
         .category-links {
-            padding: 12px 16px;
-            display: grid;
-            gap: 10px;
+            padding: 12px 0;
+            display: flex;
+            flex-direction: column;
+            max-height: 210px; /* ارتفاع ثابت للقائمة */
+            overflow-y: auto; /* إمكانية التمرير */
         }
         
         .category-link {
-            display: flex;
-            align-items: center;
-            padding: 10px 12px;
-            background: #f8f9fa;
-            border-radius: 10px;
+            padding: 10px 16px;
             color: #33348e;
             font-weight: 500;
             transition: all 0.2s ease;
             text-decoration: none;
             font-size: 0.95rem;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .category-link:hover {
             background: #ffde59;
-            transform: translateX(5px);
         }
         
-        .category-link i {
-            margin-left: 8px;
-            font-size: 0.85rem;
+        .category-links::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .category-links::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .category-links::-webkit-scrollbar-thumb {
+            background: #ff914d;
+            border-radius: 10px;
+        }
+        
+        .category-links::-webkit-scrollbar-thumb:hover {
+            background: #ff7a26;
         }
         
         .whatsapp-container {
@@ -139,7 +143,6 @@
         .whatsapp-image {
             width: 40%;
             max-width: 550px;
-            transition: all 0.3s ease;
         }
         
         /* تحسينات للشاشات المتوسطة */
@@ -179,17 +182,16 @@
                 font-size: 1rem;
             }
             
-            .category-icon {
-                font-size: 1.2rem;
+            .category-content.active {
+                max-height: 220px;
             }
             
             .category-links {
-                padding: 10px 12px;
-                gap: 8px;
+                max-height: 180px;
             }
             
             .category-link {
-                padding: 8px 10px;
+                padding: 8px 12px;
                 font-size: 0.9rem;
             }
             
@@ -212,15 +214,10 @@
             
             .category-title {
                 font-size: 0.95rem;
-                gap: 6px;
-            }
-            
-            .category-icon {
-                font-size: 1.1rem;
             }
             
             .dropdown-icon {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
             
             .whatsapp-image {
@@ -241,20 +238,18 @@
             
             .category-title {
                 font-size: 0.9rem;
-                gap: 5px;
             }
             
-            .category-icon {
-                font-size: 1rem;
+            .category-content.active {
+                max-height: 200px;
             }
             
             .category-links {
-                padding: 8px 10px;
-                gap: 7px;
+                max-height: 160px;
             }
             
             .category-link {
-                padding: 7px 9px;
+                padding: 7px 10px;
                 font-size: 0.85rem;
             }
             
@@ -270,10 +265,6 @@
             
             .category-title {
                 font-size: 0.85rem;
-            }
-            
-            .category-icon {
-                font-size: 0.9rem;
             }
         }
         
@@ -300,18 +291,12 @@
         <!-- قسم الكتب المضافة حديثاً -->
         <div class="category-card">
             <div class="category-header">
-                <div class="category-title">
-                    <i class="fas fa-book-open category-icon"></i>
-                    المضاف حديثاً
-                </div>
+                <div class="category-title">المضاف حديثاً</div>
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
             <div class="category-content">
                 <div class="category-links">
-                    <a href="https://storebooks.shop/s/Products" target="_top" class="category-link">
-                        عرض الكتب المضافة حديثاً
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
+                    <a href="https://storebooks.shop/s/Products" target="_top" class="category-link">عرض الكتب المضافة حديثاً</a>
                 </div>
             </div>
         </div>
@@ -319,18 +304,12 @@
         <!-- قسم طلبات الجملة -->
         <div class="category-card">
             <div class="category-header">
-                <div class="category-title">
-                    <i class="fas fa-boxes category-icon"></i>
-                    طلبات الجملة
-                </div>
+                <div class="category-title">طلبات الجملة</div>
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
             <div class="category-content">
                 <div class="category-links">
-                    <a href="https://storebooks.shop/s/p251786" target="_top" class="category-link">
-                        تقديم طلب جملة
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
+                    <a href="https://storebooks.shop/s/p251786" target="_top" class="category-link">تقديم طلب جملة</a>
                 </div>
             </div>
         </div>
@@ -338,18 +317,12 @@
         <!-- قسم الكتب الجامعية -->
         <div class="category-card">
             <div class="category-header">
-                <div class="category-title">
-                    <i class="fas fa-graduation-cap category-icon"></i>
-                    الكتب الجامعية
-                </div>
+                <div class="category-title">الكتب الجامعية</div>
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
             <div class="category-content">
                 <div class="category-links">
-                    <a href="https://universities.storebooks.shop" target="_top" class="category-link">
-                        استعرض الكتب الجامعية
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
+                    <a href="https://universities.storebooks.shop" target="_top" class="category-link">استعرض الكتب الجامعية</a>
                 </div>
             </div>
         </div>
@@ -357,19 +330,20 @@
         <!-- قسم أقسام الكتب -->
         <div class="category-card">
             <div class="category-header">
-                <div class="category-title">
-                    <i class="fas fa-tags category-icon"></i>
-                    أقسام الكتب
-                </div>
+                <div class="category-title">أقسام الكتب</div>
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
             <div class="category-content">
                 <div class="category-links">
-                    <a href="https://storebooks.shop/s/Products?type=روايات" target="_top" class="category-link">روايات <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=ديني" target="_top" class="category-link">ديني <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=إدارة أعمال" target="_top" class="category-link">إدارة أعمال <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=تنمية ذاتيه" target="_top" class="category-link">تنمية ذاتية <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=علمى" target="_top" class="category-link">علمي <i class="fas fa-arrow-left"></i></a>
+                    <a href="https://storebooks.shop/s/Products?type=روايات" target="_top" class="category-link">روايات</a>
+                    <a href="https://storebooks.shop/s/Products?type=ديني" target="_top" class="category-link">ديني</a>
+                    <a href="https://storebooks.shop/s/Products?type=إدارة أعمال" target="_top" class="category-link">إدارة أعمال</a>
+                    <a href="https://storebooks.shop/s/Products?type=تنمية ذاتيه" target="_top" class="category-link">تنمية ذاتية</a>
+                    <a href="https://storebooks.shop/s/Products?type=علمى" target="_top" class="category-link">علمي</a>
+                    <a href="https://storebooks.shop/s/Products?type=أدب" target="_top" class="category-link">أدب</a>
+                    <a href="https://storebooks.shop/s/Products?type=تاريخ" target="_top" class="category-link">تاريخ</a>
+                    <a href="https://storebooks.shop/s/Products?type=خيال" target="_top" class="category-link">خيال</a>
+                    <a href="https://storebooks.shop/s/Products?type=تشويق" target="_top" class="category-link">تشويق</a>
                 </div>
             </div>
         </div>
@@ -377,18 +351,18 @@
         <!-- قسم المؤلفين -->
         <div class="category-card">
             <div class="category-header">
-                <div class="category-title">
-                    <i class="fas fa-pen-fancy category-icon"></i>
-                    المؤلفين
-                </div>
+                <div class="category-title">المؤلفين</div>
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
             <div class="category-content">
                 <div class="category-links">
-                    <a href="https://storebooks.shop/s/Products?type=عمرو عبدالحميد" target="_top" class="category-link">عمرو عبد الحميد <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=أدهم الشرقاوي" target="_top" class="category-link">أدهم الشرقاوي <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=يوسف الحسيني" target="_top" class="category-link">يوسف الحسيني <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=أحمد خالد مصطفى" target="_top" class="category-link">أحمد خالد مصطفى <i class="fas fa-arrow-left"></i></a>
+                    <a href="https://storebooks.shop/s/Products?type=عمرو عبدالحميد" target="_top" class="category-link">عمرو عبد الحميد</a>
+                    <a href="https://storebooks.shop/s/Products?type=أدهم الشرقاوي" target="_top" class="category-link">أدهم الشرقاوي</a>
+                    <a href="https://storebooks.shop/s/Products?type=يوسف الحسيني" target="_top" class="category-link">يوسف الحسيني</a>
+                    <a href="https://storebooks.shop/s/Products?type=أحمد خالد مصطفى" target="_top" class="category-link">أحمد خالد مصطفى</a>
+                    <a href="https://storebooks.shop/s/Products?type=حنان لاشين" target="_top" class="category-link">حنان لاشين</a>
+                    <a href="https://storebooks.shop/s/Products?type=منى سلامة" target="_top" class="category-link">منى سلامة</a>
+                    <a href="https://storebooks.shop/s/Products?type=أسامة المسلم" target="_top" class="category-link">أسامة المسلم</a>
                 </div>
             </div>
         </div>
@@ -396,18 +370,18 @@
         <!-- قسم دور النشر -->
         <div class="category-card">
             <div class="category-header">
-                <div class="category-title">
-                    <i class="fas fa-store category-icon"></i>
-                    دور النشر
-                </div>
+                <div class="category-title">دور النشر</div>
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
             <div class="category-content">
                 <div class="category-links">
-                    <a href="https://storebooks.shop/s/Products?type=عصير الكتب" target="_top" class="category-link">عصير الكتب <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=دون" target="_top" class="category-link">دون <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=الشروق" target="_top" class="category-link">الشروق <i class="fas fa-arrow-left"></i></a>
-                    <a href="https://storebooks.shop/s/Products?type=الكرمة" target="_top" class="category-link">الكرمة <i class="fas fa-arrow-left"></i></a>
+                    <a href="https://storebooks.shop/s/Products?type=عصير الكتب" target="_top" class="category-link">عصير الكتب</a>
+                    <a href="https://storebooks.shop/s/Products?type=دون" target="_top" class="category-link">دون</a>
+                    <a href="https://storebooks.shop/s/Products?type=الشروق" target="_top" class="category-link">الشروق</a>
+                    <a href="https://storebooks.shop/s/Products?type=الكرمة" target="_top" class="category-link">الكرمة</a>
+                    <a href="https://storebooks.shop/s/Products?type=كيان" target="_top" class="category-link">كيان</a>
+                    <a href="https://storebooks.shop/s/Products?type=المصرية اللبنانية" target="_top" class="category-link">المصرية اللبنانية</a>
+                    <a href="https://storebooks.shop/s/Products?type=مسافات" target="_top" class="category-link">مسافات</a>
                 </div>
             </div>
         </div>
@@ -425,23 +399,40 @@
             const categoryHeaders = document.querySelectorAll('.category-header');
             
             categoryHeaders.forEach(header => {
-                header.addEventListener('click', function() {
+                header.addEventListener('click', function(e) {
+                    // منع الانتشار لتجنب إغلاق القائمة فور فتحها
+                    e.stopPropagation();
+                    
                     const content = this.nextElementSibling;
                     const icon = this.querySelector('.dropdown-icon');
                     
-                    // التبديل بين فتح وإغلاق القسم الحالي فقط
-                    content.classList.toggle('active');
-                    icon.classList.toggle('active');
-                    
-                    // إغلاق جميع الأقسام الأخرى عند فتح قسم جديد
+                    // إذا كانت القائمة مفتوحة بالفعل، أغلقها
                     if (content.classList.contains('active')) {
+                        content.classList.remove('active');
+                        icon.classList.remove('active');
+                    } else {
+                        // أغلق جميع القوائم الأخرى أولاً
                         document.querySelectorAll('.category-content').forEach(item => {
-                            if (item !== content && item.classList.contains('active')) {
-                                item.classList.remove('active');
-                                item.previousElementSibling.querySelector('.dropdown-icon').classList.remove('active');
-                            }
+                            item.classList.remove('active');
                         });
+                        document.querySelectorAll('.dropdown-icon').forEach(i => {
+                            i.classList.remove('active');
+                        });
+                        
+                        // ثم افتح القائمة الحالية
+                        content.classList.add('active');
+                        icon.classList.add('active');
                     }
+                });
+            });
+            
+            // إغلاق القوائم عند النقر خارجها
+            document.addEventListener('click', function() {
+                document.querySelectorAll('.category-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.querySelectorAll('.dropdown-icon').forEach(icon => {
+                    icon.classList.remove('active');
                 });
             });
             
@@ -450,18 +441,6 @@
                 content.addEventListener('click', function(e) {
                     e.stopPropagation();
                 });
-            });
-            
-            // إغلاق القوائم عند النقر خارجها
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.category-card')) {
-                    document.querySelectorAll('.category-content').forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    document.querySelectorAll('.dropdown-icon').forEach(icon => {
-                        icon.classList.remove('active');
-                    });
-                }
             });
         });
     </script>
