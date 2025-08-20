@@ -118,24 +118,16 @@
             font-size: 0.9rem;
         }
         
-        .whatsapp-section {
-            margin-top: 50px;
+        .whatsapp-container {
             text-align: center;
+            margin-top: 30px;
             width: 100%;
-            padding: 20px;
         }
         
         .whatsapp-image {
             width: 40%;
             max-width: 600px;
             transition: all 0.3s ease;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .whatsapp-image:hover {
-            transform: scale(1.03);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
         
         /* تأثيرات للجوال */
@@ -322,7 +314,7 @@
         </div>
     </div>
     
-    <div class="whatsapp-section">
+    <div class="whatsapp-container">
         <a href="https://wa.me/201009749274?text=أهلا%20يا%20استوربوكس%20✨" target="_blank">
             <img src="https://fatoradrive.blob.core.windows.net/fqe00222025/media-LVOFT.jpg" alt="تواصل عبر واتساب" class="whatsapp-image">
         </a>
@@ -357,14 +349,7 @@
                 });
             });
             
-            // فتح أول ثلاثة أقسام تلقائياً
-            document.querySelectorAll('.category-card:nth-child(-n+3) .category-content').forEach(content => {
-                content.classList.add('active');
-            });
-            
-            document.querySelectorAll('.category-card:nth-child(-n+3) .dropdown-icon').forEach(icon => {
-                icon.classList.add('active');
-            });
+            // تم إزالة الكود الذي كان يفتح الأقسام الثلاثة الأولى تلقائياً
         });
     </script>
 </body>
