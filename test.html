@@ -28,7 +28,8 @@
         
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             gap: 25px;
             width: 100%;
             max-width: 1200px;
@@ -43,6 +44,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             position: relative;
+            height: 100%;
         }
         
         .category-card:hover {
@@ -58,6 +60,7 @@
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
+            height: 90px;
         }
         
         .category-title {
@@ -131,15 +134,24 @@
         }
         
         /* تأثيرات للجوال */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
+                grid-template-rows: auto;
                 gap: 20px;
                 padding: 10px;
             }
             
             .category-header {
                 padding: 15px;
+                height: 80px;
             }
             
             .category-title {
@@ -348,8 +360,6 @@
                     icon.classList.toggle('active');
                 });
             });
-            
-            // تم إزالة الكود الذي كان يفتح الأقسام الثلاثة الأولى تلقائياً
         });
     </script>
 </body>
