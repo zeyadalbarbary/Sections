@@ -13,6 +13,7 @@
             line-height: 1;
             margin: 0;
             padding: 0;
+            background-color: #f8f4f2;
         }
 
         a {
@@ -31,11 +32,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
+            gap: 30px;
             flex-wrap: wrap;
             padding: 15px;
             position: relative;
-            box-sizing: border-box;
         }
 
         .div-rectangular {
@@ -53,7 +53,6 @@
             margin-bottom: 1px;
             position: relative;
             z-index: 3;
-            box-sizing: border-box;
         }
 
         .div-rectangular:hover {
@@ -69,7 +68,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 0 10px;
         }
 
         .dropdown-toggle .arrow-icon {
@@ -111,17 +109,13 @@
 
         .dropdown a {
             display: block;
-            padding: 10px 5px;
+            padding: 10px;
             text-decoration: none;
             color: #33348e;
             font-weight: bold;
-            min-height: 20px;
-            line-height: 1.2;
+            height: 40px;
+            line-height: 40px;
             transition: background 0.2s ease;
-            box-sizing: border-box;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         .dropdown a:hover {
@@ -149,8 +143,7 @@
 
         .whatsapp-container {
             text-align: center;
-            margin-top: 20px;
-            padding: 0 15px;
+            margin-top: 0%;
         }
 
         .whatsapp-image {
@@ -172,26 +165,20 @@
             .container {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 8px;
+                gap: 10px;
                 justify-content: center;
                 width: 100%;
                 padding: 10px;
+                box-sizing: border-box;
             }
 
             .div-rectangular {
                 width: 100%;
                 height: 50px;
                 margin-bottom: 0;
-                border-width: 2px;
             }
 
             .div-rectangular h6 {
-                font-size: 0.9em;
-                flex-direction: column;
-                gap: 2px;
-            }
-            
-            .dropdown-toggle h6 {
                 font-size: 0.8em;
             }
 
@@ -208,27 +195,11 @@
             .dropdown a {
                 padding: 8px 5px;
                 font-size: 0.9em;
-                line-height: 1.2;
             }
 
             .whatsapp-image {
                 width: 100%;
                 max-width: 600px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .div-rectangular h6 {
-                font-size: 0.75em;
-            }
-            
-            .dropdown-toggle h6 {
-                font-size: 0.7em;
-            }
-            
-            .container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 6px;
             }
         }
     </style>
