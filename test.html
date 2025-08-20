@@ -105,6 +105,7 @@
         .dropdown.active {
             display: block;
             animation: fadeIn 0.3s ease;
+            z-index: 9999; /* زيادة قيمة z-index عند الفتح */
         }
 
         @keyframes fadeIn {
@@ -164,6 +165,8 @@
             width: 100%;
             padding: 0 15px;
             box-sizing: border-box;
+            position: relative;
+            z-index: 2; /* تأكد من أن واتساب أقل من القوائم المنسدلة */
         }
 
         .whatsapp-image {
