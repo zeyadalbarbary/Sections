@@ -22,7 +22,7 @@
         
         body {
             font-family: 'Tajawal', sans-serif;
-            background: #f8f4f2;
+            background: linear-gradient(135deg, #f8f4f2 0%, #e9f0f7 100%);
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
@@ -31,6 +31,27 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #33348e;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tagline {
+            color: #5C7585;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         .container {
@@ -46,17 +67,19 @@
         
         .category-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
             height: 100%;
+            border: 2px solid transparent;
         }
         
         .category-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            border-color: #ff914d;
         }
         
         .category-header {
@@ -110,10 +133,12 @@
             text-decoration: none;
             font-size: 0.95rem;
             border-bottom: 1px solid #f0f0f0;
+            display: block;
         }
         
         .category-link:hover {
             background: #ffde59;
+            padding-right: 25px;
         }
         
         .category-links::-webkit-scrollbar {
@@ -134,15 +159,70 @@
             background: #ff7a26;
         }
         
-        .whatsapp-container {
-            text-align: center;
-            margin-top: 30px;
+        .social-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
             width: 100%;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #33348e 0%, #2a2b7a 100%);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(51, 52, 142, 0.3);
+        }
+        
+        .whatsapp-section {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .whatsapp-title {
+            color: #33348e;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
         }
         
         .whatsapp-image {
             width: 40%;
-            max-width: 600px;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #5C7585;
+            font-size: 0.9rem;
+            width: 100%;
+            padding: 15px;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        .contact-info {
+            margin: 10px 0;
         }
         
         /* تحسينات للشاشات المتوسطة */
@@ -159,13 +239,28 @@
             .category-title {
                 font-size: 1.2rem;
             }
+            
+            .whatsapp-image {
+                width: 50%;
+            }
         }
         
         /* تحسينات للشاشات الصغيرة */
         @media (max-width: 768px) {
             .container {
-                gap: 12px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                gap: 15px;
                 padding: 15px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+                padding: 0 15px;
             }
             
             .category-header {
@@ -183,15 +278,25 @@
             }
             
             .whatsapp-image {
-                width: 60%;
+                width: 70%;
             }
         }
         
         /* تحسينات للشاشات الصغيرة جدًا */
         @media (max-width: 480px) {
             .container {
-                gap: 10px;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 12px;
                 padding: 10px;
+            }
+            
+            .header {
+                margin-bottom: 20px;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
             }
             
             .category-header {
@@ -217,7 +322,13 @@
             }
             
             .whatsapp-image {
-                width: 80%;
+                width: 90%;
+            }
+            
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
             }
         }
         
@@ -240,6 +351,11 @@
     </style>
 </head>
 <body>
+    <div class="header">
+        <div class="logo">استوربوكس</div>
+        <div class="tagline">متجر الكتب والروايات، الكتب الجامعية، الأدوات المكتبية وكل ما يخص التعليم والطباعة</div>
+    </div>
+    
     <div class="container">
         <!-- قسم الكتب المضافة حديثاً -->
         <div class="category-card">
@@ -295,8 +411,6 @@
                     <a href="https://storebooks.shop/s/Products?type=علمى" target="_top" class="category-link">علمي</a>
                     <a href="https://storebooks.shop/s/Products?type=أدب" target="_top" class="category-link">أدب</a>
                     <a href="https://storebooks.shop/s/Products?type=تاريخ" target="_top" class="category-link">تاريخ</a>
-                    <a href="https://storebooks.shop/s/Products?type=خيال" target="_top" class="category-link">خيال</a>
-                    <a href="https://storebooks.shop/s/Products?type=تشويق" target="_top" class="category-link">تشويق</a>
                 </div>
             </div>
         </div>
@@ -314,8 +428,6 @@
                     <a href="https://storebooks.shop/s/Products?type=يوسف الحسيني" target="_top" class="category-link">يوسف الحسيني</a>
                     <a href="https://storebooks.shop/s/Products?type=أحمد خالد مصطفى" target="_top" class="category-link">أحمد خالد مصطفى</a>
                     <a href="https://storebooks.shop/s/Products?type=حنان لاشين" target="_top" class="category-link">حنان لاشين</a>
-                    <a href="https://storebooks.shop/s/Products?type=منى سلامة" target="_top" class="category-link">منى سلامة</a>
-                    <a href="https://storebooks.shop/s/Products?type=أسامة المسلم" target="_top" class="category-link">أسامة المسلم</a>
                 </div>
             </div>
         </div>
@@ -333,17 +445,33 @@
                     <a href="https://storebooks.shop/s/Products?type=الشروق" target="_top" class="category-link">الشروق</a>
                     <a href="https://storebooks.shop/s/Products?type=الكرمة" target="_top" class="category-link">الكرمة</a>
                     <a href="https://storebooks.shop/s/Products?type=كيان" target="_top" class="category-link">كيان</a>
-                    <a href="https://storebooks.shop/s/Products?type=المصرية اللبنانية" target="_top" class="category-link">المصرية اللبنانية</a>
-                    <a href="https://storebooks.shop/s/Products?type=مسافات" target="_top" class="category-link">مسافات</a>
                 </div>
             </div>
         </div>
     </div>
     
-    <div class="whatsapp-container">
+    <div class="social-section">
+        <a href="https://www.facebook.com/storebooks.shop" class="social-link" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/storebooks.shop" class="social-link" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/storebooks_shop" class="social-link" target="_blank">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+    
+    <div class="whatsapp-section">
+        <div class="whatsapp-title">تواصل معنا عبر واتساب</div>
         <a href="https://wa.me/201009749274?text=أهلا%20يا%20استوربوكس%20✨" target="_blank">
             <img src="https://fatoradrive.blob.core.windows.net/fqe00222025/media-LVOFT.jpg" alt="تواصل عبر واتساب" class="whatsapp-image">
         </a>
+    </div>
+    
+    <div class="footer">
+        <div class="contact-info">رقم الهاتف: 01009749274</div>
+        <div>© 2023 استوربوكس. جميع الحقوق محفوظة</div>
     </div>
 
     <script>
