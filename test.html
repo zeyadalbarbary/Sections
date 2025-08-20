@@ -104,6 +104,17 @@
             font-weight: 700;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
+.category-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    display: none; /* مهم */
+}
+
+.category-content.active {
+    display: block; /* يظهر فقط المفتوح */
+    max-height: 250px;
+}
         
         .dropdown-icon {
             transition: transform 0.3s ease;
