@@ -166,6 +166,12 @@
             background: #ff7a26;
         }
 
+        .dropdown.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+            z-index: 999999;
+        }
+
         .whatsapp-container {
             text-align: center;
             margin-top: 40px;
@@ -220,6 +226,11 @@
             .header h1 {
                 font-size: 1.8rem;
             }
+            .dropdown.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+            z-index: 999999;
+            }
         }
 
         @media (max-width: 480px) {
@@ -242,6 +253,11 @@
             .dropdown {
                 width: 98%;
                 padding: 10px 0;
+            }
+            .dropdown.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+            z-index: 999999;
             }
             
             body {
