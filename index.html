@@ -33,7 +33,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-			justify-content: flex-start;
+            justify-content: flex-start;
             padding: 20px;
         }
         
@@ -111,6 +111,30 @@
             padding: 15px;
             display: grid;
             gap: 10px;
+            max-height: 300px; /* ارتفاع أقصى للقائمة */
+        }
+        
+        /* تخصيص شريط التمرير */
+        .scrollable {
+            overflow-y: auto;
+        }
+        
+        .scrollable::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .scrollable::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .scrollable::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+        
+        .scrollable::-webkit-scrollbar-thumb:hover {
+            background: #e06a1b;
         }
         
         .category-link {
@@ -149,11 +173,11 @@
         }
 			
 		.whatsapp-image {
-		width: 100%;
-		max-width: 500px;
-		transition: var(--transition);
-		border-radius: 0;   /* شيل الزوايا المدورة */
-		box-shadow: none;   /* شيل أي ظل */
+		    width: 100%;
+		    max-width: 500px;
+		    transition: var(--transition);
+		    border-radius: 0;
+		    box-shadow: none;
 		}
 
         
@@ -214,6 +238,26 @@
             .category-link {
                 padding: 10px 12px;
                 font-size: 0.9rem;
+            }
+        }
+        
+        /* خاصية ربط البطاقات على الشاشات الكبيرة */
+        @media (min-width: 1025px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            /* تحديد مجموعات البطاقات المرتبطة */
+            .category-card:nth-child(1),
+            .category-card:nth-child(2),
+            .category-card:nth-child(3) {
+                grid-row: 1;
+            }
+            
+            .category-card:nth-child(4),
+            .category-card:nth-child(5),
+            .category-card:nth-child(6) {
+                grid-row: 2;
             }
         }
         
@@ -305,12 +349,15 @@
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
             <div class="category-content">
-                <div class="category-links">
+                <div class="category-links scrollable">
                     <a href="https://storebooks.shop/s/Products?type=روايات" target="_top" class="category-link">روايات <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=ديني" target="_top" class="category-link">ديني <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=إدارة أعمال" target="_top" class="category-link">إدارة أعمال <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=تنمية ذاتيه" target="_top" class="category-link">تنمية ذاتية <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=علمى" target="_top" class="category-link">علمي <i class="fas fa-arrow-left"></i></a>
+                    <a href="https://storebooks.shop/s/Products?type=أدب" target="_top" class="category-link">أدب <i class="fas fa-arrow-left"></i></a>
+                    <a href="https://storebooks.shop/s/Products?type=تاريخ" target="_top" class="category-link">تاريخ <i class="fas fa-arrow-left"></i></a>
+                    <a href="https://storebooks.shop/s/Products?type=فلسفة" target="_top" class="category-link">فلسفة <i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>
@@ -325,11 +372,13 @@
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
             <div class="category-content">
-                <div class="category-links">
+                <div class="category-links scrollable">
                     <a href="https://storebooks.shop/s/Products?type=عمرو عبدالحميد" target="_top" class="category-link">عمرو عبد الحميد <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=أدهم الشرقاوي" target="_top" class="category-link">أدهم الشرقاوي <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=يوسف الحسيني" target="_top" class="category-link">يوسف الحسيني <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=أحمد خالد مصطفى" target="_top" class="category-link">أحمد خالد مصطفى <i class="fas fa-arrow-left"></i></a>
+                    <a href="https://storebooks.shop/s/Products?type=نجيب محفوظ" target="_top" class="category-link">نجيب محفوظ <i class="fas fa-arrow-left"></i></a>
+                    <a href="https://storebooks.shop/s/Products?type=يوسف زيدان" target="_top" class="category-link">يوسف زيدان <i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>
@@ -344,11 +393,13 @@
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
             <div class="category-content">
-                <div class="category-links">
+                <div class="category-links scrollable">
                     <a href="https://storebooks.shop/s/Products?type=عصير الكتب" target="_top" class="category-link">عصير الكتب <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=دون" target="_top" class="category-link">دون <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=الشروق" target="_top" class="category-link">الشروق <i class="fas fa-arrow-left"></i></a>
                     <a href="https://storebooks.shop/s/Products?type=الكرمة" target="_top" class="category-link">الكرمة <i class="fas fa-arrow-left"></i></a>
+                    <a href="https://storebooks.shop/s/Products?type=دار المعارف" target="_top" class="category-link">دار المعارف <i class="fas fa-arrow-left"></i></a>
+                    <a href="https://storebooks.shop/s/Products?type=الهيئة المصرية العامة للكتاب" target="_top" class="category-link">الهيئة المصرية العامة للكتاب <i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>
@@ -365,7 +416,11 @@
             // إضافة فعالية للأقسام
             const categoryHeaders = document.querySelectorAll('.category-header');
             
-            categoryHeaders.forEach(header => {
+            // مجموعات البطاقات المرتبطة (لشاشات الكمبيوتر فقط)
+            const row1Cards = [0, 1, 2]; // البطاقات في الصف الأول
+            const row2Cards = [3, 4, 5]; // البطاقات في الصف الثاني
+            
+            categoryHeaders.forEach((header, index) => {
                 header.addEventListener('click', function() {
                     const content = this.nextElementSibling;
                     const icon = this.querySelector('.dropdown-icon');
@@ -374,14 +429,43 @@
                     content.classList.toggle('active');
                     icon.classList.toggle('active');
                     
-                    // إغلاق جميع الأقسام الأخرى عند فتح قسم جديد
-                    if (content.classList.contains('active')) {
-                        document.querySelectorAll('.category-content').forEach(item => {
-                            if (item !== content && item.classList.contains('active')) {
-                                item.classList.remove('active');
-                                item.previousElementSibling.querySelector('.dropdown-icon').classList.remove('active');
+                    // على شاشات الكمبيوتر، فتح البطاقات المرتبطة
+                    if (window.innerWidth >= 1025) {
+                        let cardsToOpen = [];
+                        
+                        // تحديد البطاقات المرتبطة
+                        if (row1Cards.includes(index)) {
+                            cardsToOpen = row1Cards;
+                        } else if (row2Cards.includes(index)) {
+                            cardsToOpen = row2Cards;
+                        }
+                        
+                        // فتح أو إغلاق جميع البطاقات في المجموعة
+                        cardsToOpen.forEach(cardIndex => {
+                            if (cardIndex !== index) {
+                                const otherHeader = categoryHeaders[cardIndex];
+                                const otherContent = otherHeader.nextElementSibling;
+                                const otherIcon = otherHeader.querySelector('.dropdown-icon');
+                                
+                                if (content.classList.contains('active')) {
+                                    otherContent.classList.add('active');
+                                    otherIcon.classList.add('active');
+                                } else {
+                                    otherContent.classList.remove('active');
+                                    otherIcon.classList.remove('active');
+                                }
                             }
                         });
+                    } else {
+                        // على الشاشات الصغيرة، إغلاق جميع الأقسام الأخرى عند فتح قسم جديد
+                        if (content.classList.contains('active')) {
+                            document.querySelectorAll('.category-content').forEach(item => {
+                                if (item !== content && item.classList.contains('active')) {
+                                    item.classList.remove('active');
+                                    item.previousElementSibling.querySelector('.dropdown-icon').classList.remove('active');
+                                }
+                            });
+                        }
                     }
                 });
             });
@@ -410,6 +494,13 @@
             if (firstCategory) {
                 firstCategory.click();
             }
+            
+            // إضافة صنف scrollable تلقائياً للقوائم التي تحتوي على أكثر من 5 عناصر
+            document.querySelectorAll('.category-links').forEach(links => {
+                if (links.children.length > 5) {
+                    links.classList.add('scrollable');
+                }
+            });
         });
     </script>
 </body>
