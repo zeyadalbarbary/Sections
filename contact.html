@@ -1,1 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - استوربوكس</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff914d;
+            --secondary-color: #ff6b2b;
+            --light-color: #f9f9f9;
+            --dark-color: #333;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #fef8f4 0%, #ffe5d9 100%);
+            color: var(--dark-color);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .info-content h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .info-content p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .info-content a {
+            color: #666;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .info-content a:hover {
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 145, 77, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(255, 145, 77, 0.3);
+        }
+        
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 145, 77, 0.4);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+        }
+        
+        .map {
+            margin-top: 40px;
+            width: 100%;
+            height: 300px;
+            background: #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .contact-info, .contact-form {
+                min-width: 100%;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .logo {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="SB-logo.png" alt="شعار استوربوكس" class="logo">
+            <h1>اتصل بنا</h1>
+            <p class="subtitle">نحن هنا لمساعدتك! تواصل معنا بأي وسيلة تناسبك</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>رقم الاتصال</h3>
+                        <p><a href="tel:01551876139">01551876139</a></p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>الواتساب</h3>
+                        <p><a href="https://wa.me/2001009749274" target="_blank">01009749274</a></p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>البريد الإلكتروني</h3>
+                        <p><a href="mailto:info@storebooks.shop">info@storebooks.shop</a></p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>العنوان</h3>
+                        <p>كشك الصحافة بجوار جامعة دمياط</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>ساعات العمل</h3>
+                        <p>السبت إلى الخميس: 9 ص - 5 م</p>
+                        <p>الجمعة: مغلق</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>أرسل رسالة</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">الاسم بالكامل</label>
+                        <input type="text" id="name" placeholder="أدخل اسمك بالكامل" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">الموضوع</label>
+                        <input type="text" id="subject" placeholder="موضوع الرسالة" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea id="message" placeholder="أدخل رسالتك هنا..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">
+                        <i class="fas fa-paper-plane"></i> إرسال الرسالة
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13673.844135215915!2d31.814395!3d31.042903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDAyJzM0LjUiTiAzMcKwNDgnNTEuOCJF!5e0!3m2!1sen!2seg!4v1657543726785!5m2!1sen!2seg" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 استوربوكس. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
 
+    <script>
+        // إضافة تأثيرات عند التمرير
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // هنا يمكنك إضافة كود إرسال النموذج
+                alert('شكراً لك على رسالتك! سنرد عليك في أقرب وقت ممكن.');
+                form.reset();
+            });
+            
+            // إضافة تأثيرات للعناصر عند التمرير
+            const infoItems = document.querySelectorAll('.info-item');
+            infoItems.forEach((item, index) => {
+                item.style.opacity = "0";
+                item.style.transform = "translateX(30px)";
+                item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+                
+                setTimeout(() => {
+                    item.style.opacity = "1";
+                    item.style.transform = "translateX(0)";
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+</html>
