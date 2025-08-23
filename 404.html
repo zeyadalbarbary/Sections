@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="الصفحة غير موجودة - متجر استوربوكس">
+  <title>الصفحة غير موجودة - استوربوكس</title>
+  
+  <!-- إعادة التوجيه بعد 60 ثانية -->
+  <meta http-equiv="refresh" content="60;url=https://storebooks.shop/">
+  
+  <!-- خطوط Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary-color: #ff914d;
+      --secondary-color: #ff6b2b;
+      --accent-color: #3498db;
+      --light-color: #f9f9f9;
+      --dark-color: #333;
+      --success-color: #2ecc71;
+      --border-radius: 12px;
+      --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Tajawal', Arial, sans-serif;
+      background: linear-gradient(135deg, #fef8f4 0%, #ffe5d9 100%);
+      text-align: center;
+      padding: 20px;
+      color: var(--dark-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .header {
+      margin-bottom: 20px;
+    }
+    
+    .logo {
+      max-width: 180px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .error-section {
+      background: #fff;
+      padding: 40px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      animation: fadeIn 0.8s ease;
+    }
+    
+    .sections-frame {
+      background: #fff;
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      animation: slideUp 1s ease;
+    }
+    
+    .frame-container {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    
+    .frame-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    h1 {
+      font-size: 120px;
+      margin: 0;
+      color: var(--primary-color);
+      text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+      line-height: 1;
+    }
+    
+    h2 {
+      margin: 10px 0 20px;
+      font-size: 32px;
+      color: var(--primary-color);
+    }
+    
+    h3 {
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: var(--primary-color);
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      border-radius: 2px;
+    }
+    
+    p {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+    
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 28px;
+      background: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: var(--transition);
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(255, 145, 77, 0.3);
+    }
+    
+    a.button:hover {
+      background: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(255, 145, 77, 0.4);
+    }
+    
+    a.button.secondary {
+      background: var(--dark-color);
+      box-shadow: 0 4px 10px rgba(51, 51, 51, 0.3);
+    }
+    
+    a.button.secondary:hover {
+      background: #222;
+      box-shadow: 0 6px 15px rgba(51, 51, 51, 0.4);
+    }
+    
+    .timer-container {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: var(--border-radius);
+      display: inline-block;
+    }
+    
+    .timer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--dark-color);
+    }
+    
+    .timer span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(255, 145, 77, 0.3);
+    }
+    
+    .sections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .section-card {
+      background: #f8f9fa;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      border: 1px solid #eee;
+    }
+    
+    .section-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .section-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    
+    .section-card h4 {
+      padding: 15px;
+      font-size: 18px;
+      color: var(--dark-color);
+    }
+    
+    .loading {
+      padding: 40px;
+      text-align: center;
+      color: #666;
+    }
+    
+    .loading i {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+    
+    .error-message {
+      color: var(--secondary-color);
+      padding: 20px;
+      background: #ffeded;
+      border-radius: var(--border-radius);
+      margin: 20px 0;
+    }
+    
+    /* الرسوم المتحركة */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    /* تصميم متجاوب */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 80px;
+      }
+      
+      h2 {
+        font-size: 26px;
+      }
+      
+      h3 {
+        font-size: 22px;
+      }
+      
+      .error-section, .sections-frame {
+        padding: 25px;
+      }
+      
+      .timer {
+        font-size: 20px;
+      }
+      
+      .timer span {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .sections-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      
+      .frame-container {
+        height: 400px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 60px;
+      }
+      
+      .buttons {
+        flex-direction: column;
+      }
+      
+      a.button {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .sections-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .frame-container {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="SB-logo.png" alt="شعار استوربوكس" class="logo">
+  </div>
+  
+  <div class="container">
+    <section class="error-section">
+      <h1>404</h1>
+      <h2>عذراً، الصفحة غير موجودة</h2>
+      <p>الصفحة التي تبحث عنها غير متاحة أو تم نقلها. نحن نقوم بإعادة توجيهك تلقائياً إلى الصفحة الرئيسية خلال <strong>60 ثانية</strong>.</p>
+      <p>يمكنك أيضاً استكشاف الأقسام المختلفة المتاحة لدينا أدناه أو العودة إلى الصفحة الرئيسية الآن.</p>
+      
+      <div class="buttons">
+        <a href="https://storebooks.shop/" class="button">
+          <i class="fas fa-home"></i>&nbsp; العودة للرئيسية
+        </a>
+        <a href="https://storebooks.shop/contact" class="button secondary">
+          <i class="fas fa-envelope"></i>&nbsp; اتصل بنا
+        </a>
+      </div>
+      
+      <div class="timer-container">
+        <p>إعادة التوجيه خلال:</p>
+        <div class="timer">
+          <span id="countdown">60</span> ثانية
+        </div>
+      </div>
+    </section>
+    
+    <section class="sections-frame">
+      <h3>استكشف أقسامنا</h3>
+      <div class="frame-container">
+        <iframe src="index.html" title="أقسام استوربوكس"></iframe>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // عد تنازلي لمدة 60 ثانية
+    let seconds = 60;
+    let countdownElement = document.getElementById("countdown");
+    
+    const countdownInterval = setInterval(() => {
+      seconds--;
+      countdownElement.textContent = seconds;
+      
+      if (seconds <= 0) {
+        clearInterval(countdownInterval);
+        window.location.href = "https://storebooks.shop/";
+      }
+      
+      // تأثير نبضي عند وصول المؤقت إلى 10 ثواني
+      if (seconds === 10) {
+        countdownElement.style.animation = "pulse 0.5s infinite";
+        countdownElement.style.color = "#ff6b2b";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
